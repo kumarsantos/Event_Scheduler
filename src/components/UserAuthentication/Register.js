@@ -53,8 +53,7 @@ const Register = () => {
       return SetWarning("Please Enter Email in Proper Format.");
     } else {
       const newuser = { firstName, lastName, email, password };
-
-      fetch("http://localhost:8000/signup", {
+      fetch(`https://event-scheduler-be.onrender.com/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
@@ -94,8 +93,8 @@ const Register = () => {
                   warning !== null
                     ? "warning"
                     : success !== null
-                    ? "success"
-                    : null
+                      ? "success"
+                      : null
                 }
               >
                 {warning !== null ? warning : success !== null ? success : null}

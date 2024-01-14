@@ -10,7 +10,7 @@ export const Home = () => {
   const [alldata, SetallData] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:8000/allevent", {
+    fetch("https://event-scheduler-be.onrender.com/allevent", {
       method: "GET",
 
       headers: {
@@ -20,6 +20,7 @@ export const Home = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         SetallData(data.Finaldata);
       });
   }, []);

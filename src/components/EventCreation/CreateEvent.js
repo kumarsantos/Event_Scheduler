@@ -25,8 +25,9 @@ const CreateEvent = () => {
     e.preventDefault();
 
     const events = { ...eventdata, days };
+    console.log(events)
 
-    fetch("http://localhost:8000/createevent", {
+    fetch("https://event-scheduler-be.onrender.com/createevent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

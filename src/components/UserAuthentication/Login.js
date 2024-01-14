@@ -40,7 +40,7 @@ const Login = () => {
       return SetError("Please Enter Email in Proper Format.");
     } else {
       const newuser = { email, password };
-      fetch("http://localhost:8000/login", {
+      fetch(`https://event-scheduler-be.onrender.com/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
@@ -78,8 +78,8 @@ const Login = () => {
                   warning !== null
                     ? "warning"
                     : success !== null
-                    ? "success"
-                    : null
+                      ? "success"
+                      : null
                 }
               >
                 {warning !== null ? warning : success !== null ? success : null}
